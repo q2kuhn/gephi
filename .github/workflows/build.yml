@@ -19,10 +19,10 @@ jobs:
           distribution: 'temurin'
           cache: 'maven'
       - name: Test site
-          run: |
-            cd modules/application
-            mkdir target
-            mkdir target/autoupdate_site
-            mvn validate scm-publish:publish-scm -P push-site
-          env:
-            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          cd modules/application
+          mkdir target
+          mkdir target/autoupdate_site
+          mvn validate scm-publish:publish-scm -P push-site
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
