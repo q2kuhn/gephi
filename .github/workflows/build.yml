@@ -23,6 +23,7 @@ jobs:
           cd modules/application
           mkdir target
           mkdir target/autoupdate_site
+          echo "test" > target/autoupdate_site/test.txt
           mvn validate scm-publish:publish-scm -P push-site
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
