@@ -26,4 +26,5 @@ jobs:
           echo "test" > target/autoupdate_site/test.txt
           mvn validate scm-publish:publish-scm -P push-site
         env:
+          GITHUB_USERNAME: x-access-token
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
