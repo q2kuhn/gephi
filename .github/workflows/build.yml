@@ -26,10 +26,10 @@ jobs:
 
       - name: Update autoupdate content on gh-pages
         run: |
+          cd modules/application
           mkdir target
           mkdir target/autoupdate_site
           echo "test4" > target/autoupdate_site/test.txt
           mvn validate scm-publish:publish-scm -P push-site
-        working-directory: modules/application
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
