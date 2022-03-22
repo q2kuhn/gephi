@@ -1153,6 +1153,7 @@
                             <scmBranch>gh-pages</scmBranch>
                             <checkinComment>Creating site for ${project.version}</checkinComment>
                             <subDirectory>${gephi.minor.version}/autoupdate</subDirectory>
+                            <serverId>github</serverId>
                         </configuration>
                     </plugin>
                 </plugins>

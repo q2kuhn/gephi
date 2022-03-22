@@ -18,5 +18,11 @@ jobs:
           java-version: '11'
           distribution: 'temurin'
           cache: 'maven'
-      - name: Build project with Maven
-        run: mvn -T 4 --batch-mode -Djava.awt.headless=true verify -P enableTests,enableCheckStyle
+      - name: Test site
+          run: |
+            cd modules/application
+            mkdir target
+            mkdir target/autoupdate_site
+            mvn validate scm-publish:publish-scm -P push-site
+          env:
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
